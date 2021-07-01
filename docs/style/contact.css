@@ -1,0 +1,441 @@
+@import url("https://fonts.googleapis.com/css2?family=Livvic:wght@600;700&display=swap");
+:root {
+  --primary-bg-midnight: #014E56;
+  --primary-color-coral: #f67e7e;
+  --primary-color-white: #ffffff;
+  --secondary-color-rapture: #79c8c7;
+  --secondary-bg-police: #2c6269;
+  --secondary-color-jungle: #004047;
+  --secondary-sacremento: #012F34;
+  --secondary-bg-darkgreen: #002529;
+}
+
+h1.large,
+h1.small {
+  color: var(--primary-color-white);
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 40px;
+}
+
+h2 {
+  font-size: 32px;
+  line-height: 32px;
+  font-weight: 700;
+}
+
+h3 {
+  font-size: 18px;
+  line-height: 28px;
+  font-weight: 700;
+}
+
+@media screen and (min-width: 750px) {
+  h1.large {
+    font-size: 64px;
+    line-height: 56px;
+    font-weight: 700;
+  }
+
+  h1.small {
+    font-size: 64px;
+    line-height: 56px;
+    font-weight: 700;
+  }
+}
+@media screen and (min-width: 1200px) {
+  h1.large {
+    font-weight: 700;
+    font-size: 100px;
+    line-height: 100px;
+  }
+
+  h2 {
+    font-size: 48px;
+    line-height: 48px;
+    font-weight: 700;
+  }
+}
+*, ::after, ::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+::selection:not(img) {
+  background-color: var(--primary-color-coral);
+  color: var(--primary-color-white);
+}
+
+body {
+  font-family: "Livvic", sans-serif;
+  font-size: 15px;
+  line-height: 28px;
+  font-weight: 600;
+  color: var(--primary-color-white);
+  background-color: var(--primary-bg-midnight);
+}
+
+footer, main, header {
+  padding-left: calc(50% - calc(100% - 48px) / 2);
+  padding-right: calc(50% - calc(100% - 48px) / 2);
+}
+
+@media only screen and (min-width: 750px) {
+  footer, main, header {
+    padding-left: calc(50% - calc(100% - 184px) / 2);
+    padding-right: calc(50% - calc(100% - 184px) / 2);
+  }
+}
+@media only screen and (min-width: 1288px) {
+  footer, main, header {
+    padding-left: calc(50% - 1110px / 2);
+    padding-right: calc(50% - 1110px / 2);
+  }
+}
+header {
+  padding-top: 48px;
+  display: flex;
+  align-items: center;
+}
+header .toggle {
+  margin-left: auto;
+  background-color: inherit;
+  border: 0;
+  cursor: pointer;
+  z-index: 4;
+}
+header nav {
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+  position: fixed;
+  height: 100%;
+  top: 0;
+  right: 0;
+  width: calc(100% - 20%);
+  padding: 110px 48px 0 48px;
+  background-color: var(--secondary-bg-police);
+  transform: translate(100%, 0);
+  transition: 0.5s ease;
+  z-index: 3;
+}
+header nav::after {
+  content: url(./../images/bg-pattern-about-1-mobile-nav-1.svg);
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  transform: translate(50%, 0);
+}
+header nav a {
+  color: var(--primary-color-white);
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+header nav a:hover:not(last-child) {
+  color: var(--primary-color-coral);
+}
+header nav a:last-child {
+  text-align: center;
+  border: 2px solid var(--primary-color-white);
+  padding: 10px 33px;
+  border-radius: 99px;
+}
+header nav a:last-child:hover {
+  background-color: var(--primary-color-white);
+  color: var(--secondary-bg-darkgreen);
+}
+
+.is-open {
+  transform: translate(0, 0);
+}
+
+@media screen and (min-width: 750px) {
+  header .toggle {
+    display: none;
+  }
+  header nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-basis: 100%;
+    gap: 36px;
+    position: sticky;
+    height: auto;
+    width: auto;
+    padding: 0;
+    padding-left: 48px;
+    background-color: transparent;
+    transform: translate(0, 0);
+    transition: 0.5s ease;
+    z-index: 3;
+  }
+  header nav::after {
+    content: none;
+  }
+  header nav a:last-child {
+    padding: 8px 24px;
+    margin-left: auto;
+  }
+}
+footer {
+  text-align: center;
+  background-color: var(--secondary-bg-darkgreen);
+  padding-top: 64px;
+  padding-bottom: 64px;
+}
+footer img {
+  transform: scale(0.8);
+  margin-bottom: 24px;
+}
+footer nav a {
+  color: white;
+  text-decoration: none;
+  padding: 0 12px;
+  transition: 0.3s ease;
+}
+footer nav a:hover {
+  color: var(--primary-color-coral);
+}
+footer nav + p {
+  margin: 24px 0;
+}
+footer ul {
+  display: flex;
+  list-style: none;
+  justify-content: center;
+  gap: 16px;
+}
+footer p {
+  opacity: 0.6;
+  font-weight: 600;
+}
+
+@media screen and (min-width: 750px) {
+  footer {
+    text-align: left;
+    display: grid;
+  }
+  footer img {
+    transform: scale(1);
+    margin-bottom: 0;
+  }
+  footer nav {
+    display: flex;
+    gap: 16px;
+    grid-row: 2/3;
+  }
+  footer nav a {
+    padding: 0;
+  }
+  footer nav + p {
+    grid-row: 1/3;
+    margin: 0 0 24px 0;
+  }
+  footer ul {
+    justify-content: flex-start;
+  }
+  footer p {
+    text-align: right;
+  }
+}
+@media screen and (min-width: 1200px) {
+  footer {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  footer ul {
+    justify-content: flex-end;
+  }
+  footer nav {
+    align-items: flex-end;
+  }
+  footer nav + p {
+    margin: 0;
+  }
+  footer p:last-child {
+    padding-top: 45px;
+  }
+}
+main {
+  text-align: center;
+  position: relative;
+  padding-bottom: 80px;
+  padding-top: 80px;
+  overflow: hidden;
+  z-index: 0;
+}
+main::after {
+  content: "";
+  z-index: -1;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  height: 250px;
+  width: 225px;
+  transform: translate(50%, 50%);
+  background: url(./../images/bg-pattern-contact-2.svg) center/cover no-repeat;
+}
+main h1 {
+  margin-bottom: 16px;
+}
+main > p {
+  font-size: 32px;
+  line-height: 32px;
+  color: var(--primary-color-coral);
+}
+main ul {
+  list-style: none;
+}
+main ul li {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+main ul li p {
+  text-align: left;
+  font-size: 18px;
+}
+main ul li:nth-child(2) {
+  margin: 24px 0;
+}
+
+form {
+  display: flex;
+  margin-top: 56px;
+  flex-direction: column;
+  gap: 17px;
+}
+form .input-content {
+  position: relative;
+}
+form .input-content label {
+  position: absolute;
+  top: 0;
+  left: 14px;
+  pointer-events: none;
+  opacity: 0.6;
+}
+form .input-content label.invisible {
+  display: none;
+}
+form .input-content label.wrong {
+  color: var(--primary-color-coral);
+}
+form .input-content input {
+  font-family: "Livvic", sans-serif;
+  background-color: inherit;
+  border: 0;
+  border-bottom: 2px solid var(--primary-color-white);
+  padding-left: 14px;
+  width: 100%;
+  height: 42px;
+  color: white;
+  font-weight: 600;
+}
+form .input-content input::placeholder {
+  color: var(--primary-color-white);
+  font-family: "Livvic", sans-serif;
+  font-size: 15px;
+  line-height: 25px;
+  letter-spacing: 0.1px;
+  opacity: 0.6;
+}
+form .input-content input:focus {
+  outline: none;
+  border-bottom: 2px solid var(--secondary-color-rapture);
+}
+form .input-content input.invalid {
+  border-bottom: 2px solid var(--primary-color-coral);
+}
+form .input-content input.valid {
+  border-bottom: 2px solid limegreen;
+}
+form .input-content .error-hint {
+  display: block;
+  text-align: left;
+  padding-left: 14px;
+  font-size: 13px;
+  text-decoration: wavy;
+  color: var(--primary-color-coral);
+}
+form .input-content .error-hint.hidden {
+  display: none;
+}
+form .input-content textarea {
+  width: 100%;
+  background-color: transparent;
+  resize: none;
+  padding-left: 14px;
+  color: white;
+  font-family: "Livvic", sans-serif;
+  border: 0;
+  border-bottom: 2px solid var(--primary-color-white);
+}
+form .input-content textarea:focus {
+  outline: none;
+  border-bottom: 2px solid var(--secondary-color-rapture);
+}
+form button[type=submit] {
+  cursor: pointer;
+  align-self: flex-start;
+  font-family: "Livvic", sans-serif;
+  background-color: var(--primary-color-white);
+  border: 0;
+  padding: 10px 24px;
+  border-radius: 50px;
+  color: var(--secondary-color-jungle);
+  transition: 0.3s ease;
+}
+form button[type=submit]:hover, form button[type=submit]:focus {
+  background-color: var(--secondary-color-rapture);
+  color: var(--secondary-color-jungle);
+}
+
+@media screen and (min-width: 750px) {
+  main::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 200px;
+    width: 200px;
+    background: url(./../images/bg-pattern-about-2-contact-1.svg) center/cover no-repeat;
+    transform: translate(-60%, 10%);
+  }
+  main::after {
+    transform: translate(50%, 0);
+  }
+}
+@media screen and (min-width: 1200px) {
+  main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 0.1fr 0.1fr 1fr;
+    text-align: left;
+    padding-top: 60px;
+    padding-bottom: 120px;
+  }
+  main::before {
+    bottom: 0;
+    top: auto;
+    left: 30%;
+    transform: rotate(-90deg) translate(-50%, 0);
+  }
+  main h1 {
+    grid-column: 1/2;
+  }
+  main p {
+    grid-row: 2/3;
+  }
+  main ul {
+    grid-row: 3/-1;
+    padding-top: 28px;
+  }
+  main form {
+    grid-column: 2/-1;
+    grid-row: 1/-1;
+    margin-top: 0;
+  }
+}
+
+/*# sourceMappingURL=contact.css.map */

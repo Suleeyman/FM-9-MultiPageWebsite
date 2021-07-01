@@ -1,0 +1,18 @@
+%container {
+    padding-left: calc(50% - calc(100% - 48px) / 2);
+    padding-right: calc(50% - calc(100% - 48px) / 2);
+}
+
+@media only screen and (min-width: 750px) {
+    %container {
+        padding-left: calc(50% - calc(100% - 184px) / 2);
+        padding-right: calc(50% - calc(100% - 184px) / 2);
+    }
+}
+
+@media only screen and (min-width: 1288px) {
+    %container {
+        padding-left: calc(50% - 1110px / 2);
+        padding-right: calc(50% - 1110px / 2);
+    }
+}

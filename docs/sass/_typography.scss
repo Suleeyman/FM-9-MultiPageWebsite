@@ -1,0 +1,48 @@
+h1.large,
+h1.small {
+    color: var(--primary-color-white);
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 40px;
+}
+
+h2 {
+    font-size: 32px;
+    line-height: 32px;
+    font-weight: 700;
+}
+
+h3 {
+    font-size: 18px;
+    line-height: 28px;
+    font-weight: 700;
+}
+
+@media screen and (min-width: 750px) {
+    h1.large {
+        font-size: 64px;
+        line-height: 56px;
+        font-weight: 700;
+    }
+
+    h1.small {
+        font-size: 64px;
+        line-height: 56px;
+        font-weight: 700;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    h1.large {
+        font-weight: 700;
+        font-size: 100px;
+        line-height: 100px;
+    }
+    
+    h2 {
+        font-size: 48px;
+        line-height: 48px;
+        font-weight: 700;
+    }
+    
+}

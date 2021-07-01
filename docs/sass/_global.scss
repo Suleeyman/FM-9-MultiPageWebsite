@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Livvic:wght@600;700&display=swap');
+
+*, ::after, ::before {
+    box-sizing: border-box;
+    margin: 0; padding: 0;
+}
+
+::selection:not(img) {
+    background-color: var(--primary-color-coral);
+    color: var(--primary-color-white);    
+}
+
+body {
+    font-family: 'Livvic', sans-serif;
+    font-size: 15px;
+    line-height: 28px;
+    font-weight: 600;
+    color: var(--primary-color-white);
+    background-color: var(--primary-bg-midnight);
+}

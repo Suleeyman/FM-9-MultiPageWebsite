@@ -1,0 +1,106 @@
+@use "./../extends" as *;
+@use "./../variables" as *;
+
+header {
+    @extend %container;
+    padding-top: 48px;
+    display: flex;
+    align-items: center;
+
+    .toggle {
+        margin-left: auto;
+        background-color: inherit;
+        border: 0;
+        cursor: pointer;
+        z-index: 4;
+    }
+
+    nav {
+        display: flex;
+        flex-direction: column;
+        gap: 36px;
+        position: fixed;
+        height: 100%;
+        top: 0; right: 0;
+        width: calc(100% - 20%);
+        padding: 110px 48px 0 48px;
+        background-color: var(--secondary-bg-police);
+        transform: translate(100%, 0);
+        transition: .5s ease;
+        z-index: 3;
+
+        &::after {
+            content: url(./../images/bg-pattern-about-1-mobile-nav-1.svg);
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            transform: translate(50%, 0);
+        }
+
+        a {
+            color: var(--primary-color-white);
+            text-decoration: none;
+            transition: .3s ease;
+
+            &:hover:not(last-child) {
+                color: var(--primary-color-coral);
+            }
+
+            &:last-child {
+                text-align: center;
+                border: 2px solid var(--primary-color-white);
+                padding: 10px 33px;
+                border-radius: 99px;
+                
+                &:hover {
+                    background-color: var(--primary-color-white);
+                    color: var(--secondary-bg-darkgreen);
+                }
+
+            }
+
+        }
+
+    }
+
+}
+
+.is-open {
+    transform: translate(0, 0);
+}
+
+@media screen and (min-width: 750px) {
+    header {
+
+        .toggle {
+            display: none;
+        }
+
+        nav {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            flex-basis: 100%;
+            gap: 36px;
+            position: sticky;
+            height: auto;
+            // top: 0; right: 0;
+            width: auto;
+            padding: 0;
+            padding-left: 48px;
+            background-color: transparent;
+            transform: translate(0, 0);
+            transition: .5s ease;
+            z-index: 3;
+    
+            &::after {
+                content: none;
+            }
+    
+            a:last-child {
+                padding: 8px 24px;
+                margin-left: auto;
+            }
+        }
+    }
+}
