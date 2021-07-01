@@ -31,9 +31,9 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Submited on FM]()
-- Live Site URL: [Github Page]()
+- Solution URL: [Submited on FM](https://www.frontendmentor.io/solutions/mobile-first-using-scss-components-Eijsx9e5w)
+- Live Site URL: [Github Page](https://suleeyman.github.io/FM-9-MultiPageWebsite/)
 
 ## Author
 
-- Frontend Mentor - [@Suleeyman](https://www.frontendmentor.io/profile/suleeyman )
+- Frontend Mentor - [@Suleeyman](https://www.frontendmentor.io/profile/suleeyman)
